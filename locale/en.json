@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Antigravity (agy) runner",
+    "description": "Runs Google Antigravity (agy acp) tasks as observable background ACP sessions. The agy tool starts a session and returns a job id immediately; job_output streams its tool calls, plan, and answer live, a completion notice arrives in-session, and job_kill cancels. Permission prompts are answered automatically by the configured policy (default: reject). Requires the agy CLI installed and signed in.",
+    "detail": "README.md"
+  }
+}

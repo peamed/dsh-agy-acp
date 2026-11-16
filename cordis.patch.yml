@@ -1,0 +1,13 @@
+# Bundle layer for dsh-agy-acp: registers the `agy` subagent provider
+# (out-of-process ACP with a live process mirror) and the model-facing
+# delegation tool that selects it.
+- insert:
+    - id: agy-acp
+      name: 'dsh-agy-acp'
+      config: {}
+    - id: tool-subagent-agy
+      name: '@deepseek-ai/dsh-tool-subagent'
+      config:
+        provider: agy
+        toolName: agy
+        maxDepth: provider-managed

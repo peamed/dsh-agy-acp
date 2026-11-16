@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Antigravity (agy) 运行器",
+    "description": "把 Google Antigravity（agy acp）任务运行为可观测的后台 ACP 会话。agy 工具启动会话并立即返回 job id；job_output 实时流式查看其工具调用、计划与回答，完成时有会话内通知，job_kill 可取消。权限请求按配置策略自动应答（默认 reject）。需要已安装并登录的 agy CLI。",
+    "detail": "README.md"
+  }
+}

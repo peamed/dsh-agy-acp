@@ -1,0 +1,174 @@
+Failed to redirect ACP output to log file: opening log file: open /home/peam/.gemini/antigravity-cli/log/acp-server-20261116_180049-12.log: read-only file system
+I1116 18:00:49.481682       1 options.go:485] Starting ACP server (pid 12, worker=false, isJetski=false)
+I1116 18:00:49.481807       1 server.go:964] Running ACP RPC loop...
+I1116 18:00:49.481923      84 server.go:988] ACP Request received: initialize
+I1116 18:00:49.482063      84 server.go:1062] Sending initialize response: {"protocolVersion":1,"agentCapabilities":{"loadSession":true,"load_session":true,"promptCapabilities":{"image":true,"audio":false,"embeddedContext":true},"sessionCapabilities":{"resume":{},"close":{},"load":{},"list":{},"additionalDirectories":{}},"session_capabilities":{"resume":{},"close":{},"load":{},"list":{},"additionalDirectories":{}},"auth":{"logout":{}},"_meta":{"antigravity":{"tier":true,"systemPrompt":{"append":true}}}},"agentInfo":{"name":"Antigravity ACP Server","version":"1.5.9"},"authMethods":[{"id":"oauth-personal","name":"Log in with Google","description":"Log in with your Google account"},{"id":"oauth-business","name":"Log in with Gemini Enterprise","description":"Log in with your Gemini Enterprise account"},{"id":"gemini-api-key","name":"Gemini API key","description":"Use an API key with Gemini Developer API"},{"id":"agent-platform","name":"Gemini Enterprise Agent Platform","description":"Use Gemini Enterprise Agent Platform (formerly Vertex AI) with Application Default Credentials"}]}
+[smoke] initialize ok; agent protocol: 1
+I1116 18:00:49.483308      85 server.go:988] ACP Request received: session/new
+I1116 18:00:49.483366      85 server.go:698] Booting backend (overlay=false)
+I1116 18:00:49.483521      25 server.go:2543] Starting language server process with pid 12
+E1116 18:00:49.483632      25 server.go:2457] Failed to initialize crash reporter: failed to setup crash output: open /home/peam/.gemini/antigravity-cli/crashes/crash_12_89643f70-c4f6-4d84-999c-d5ce9840936a.log: read-only file system
+I1116 18:00:49.483642      25 workflow_python.go:21] run_workflow Python: interpreter "", embedded true
+I1116 18:00:49.483646      25 server.go:1156] Setting GOMAXPROCS to 4
+I1116 18:00:49.484413      25 server.go:2602] Language server version: 1.5.9
+I1116 18:00:49.484422      25 server.go:1269] Language server will attempt to listen on host localhost
+I1116 18:00:49.495997      25 server.go:1284] Language server listening on random port at 45169 for HTTPS (gRPC)
+I1116 18:00:49.506335      25 server.go:1292] Language server listening on random port at 45863 for HTTP
+W1116 18:00:49.507071      99 crashreporter.go:122] No active crash reporter, cannot upload previous crashes
+I1116 18:00:49.507109      98 model_configs.go:209] Auth mode is unspecified, skipping fetchAvailableModels and returning empty response
+W1116 18:00:49.507130      86 cache.go:157] Cache(loadCodeAssistResponse): Singleflight refresh failed: error getting token source: You are not logged into Antigravity.
+W1116 18:00:49.507170      86 cache.go:157] Cache(userInfo): Singleflight refresh failed: failed to get load code assist response: error getting token source: You are not logged into Antigravity.
+E1116 18:00:49.507546      98 errorreport.go:307] Failed to poll ListExperiments: error getting token source: You are not logged into Antigravity.
+E1116 18:00:49.508391      25 summary_store.go:280] summary store open failed (corrupt_on_open), recreating: summary_store: open write db: unable to open database file: no such file or directory
+E1116 18:00:49.508542      25 summary_store.go:285] summary store recreate failed: summary_store: open write db: unable to open database file: no such file or directory
+I1116 18:00:49.508685     104 store_client.go:714] summary store: starting background reconciliation (trigger=startup)
+E1116 18:00:49.508985     104 summary_store.go:280] summary store open failed (corrupt_on_open), recreating: summary_store: open write db: unable to open database file: no such file or directory
+E1116 18:00:49.509073     104 summary_store.go:285] summary store recreate failed: summary_store: open write db: unable to open database file: no such file or directory
+E1116 18:00:49.509081     104 store_client.go:754] summary store: cannot reopen for reconciliation
+I1116 18:00:49.509140      25 auth_store.go:199] Using file-based secret storage at /home/peam/.config/antigravity/plugin-secrets.json
+I1116 18:00:49.509150      25 auth_store.go:199] Using file-based secret storage at /home/peam/.config/antigravity/plugin-secrets.json
+W1116 18:00:49.509301     140 cache.go:157] Cache(peopleInfo): Singleflight refresh failed: error getting token source: You are not logged into Antigravity.
+E1116 18:00:49.509327     140 errorreport.go:307] error getting token source: You are not logged into Antigravity.
+W1116 18:00:49.509569      25 defaults.go:717] failed to get cs path: cs path /usr/bin/cs invalid
+I1116 18:00:49.509584      25 manager.go:140] Creating trajectory store manager with proto store and SQLite store
+I1116 18:00:49.510172     164 manager.go:98] Migration [MIGRATION_ID_SANITY_CHECK_PROJECT_URIS] is enabled
+I1116 18:00:49.510226     164 manager.go:107] Migration [MIGRATION_ID_SANITY_CHECK_PROJECT_URIS] already has status MIGRATION_STATUS_COMPLETED, skipping
+I1116 18:00:49.510233     164 manager.go:98] Migration [MIGRATION_ID_PLUGIN_ENABLEMENT] is enabled
+I1116 18:00:49.510252     164 manager.go:107] Migration [MIGRATION_ID_PLUGIN_ENABLEMENT] already has status MIGRATION_STATUS_COMPLETED, skipping
+I1116 18:00:49.510254     164 manager.go:98] Migration [MIGRATION_ID_BUILTIN_SIDECARS_TO_PLUGINS] is enabled
+I1116 18:00:49.510271     164 manager.go:107] Migration [MIGRATION_ID_BUILTIN_SIDECARS_TO_PLUGINS] already has status MIGRATION_STATUS_COMPLETED, skipping
+I1116 18:00:49.510275     164 manager.go:95] Migration [MIGRATION_ID_LIN_BUILTIN_TO_MARKETPLACE] is disabled, skipping entirely
+I1116 18:00:49.510277     164 manager.go:95] Migration [MIGRATION_ID_ADOPT_BWG_INSTALLS] is disabled, skipping entirely
+I1116 18:00:49.510286     164 manager.go:95] Migration [MIGRATION_ID_GDRIVE_BUILTIN_PLUGIN] is disabled, skipping entirely
+I1116 18:00:49.510288     164 manager.go:95] Migration [MIGRATION_ID_SPLIT_SCIENCE_PLUGIN] is disabled, skipping entirely
+I1116 18:00:49.537969      25 server.go:3949] initialized server successfully in 54.398013ms
+I1116 18:00:49.538086     167 server.go:4693] Auth succeeded, refreshing features and managers
+W1116 18:00:49.538243     196 cache.go:157] Cache(peopleInfo): Singleflight refresh failed: error getting token source: You are not logged into Antigravity.
+W1116 18:00:49.538267     197 cache.go:157] Cache(loadCodeAssistResponse): Singleflight refresh failed: error getting token source: You are not logged into Antigravity.
+E1116 18:00:49.538273     196 errorreport.go:307] error getting token source: You are not logged into Antigravity.
+E1116 18:00:49.538282     197 errorreport.go:307] error getting token source: You are not logged into Antigravity.
+W1116 18:00:49.538336     196 rpcs_plugin_auth.go:109] Not reloading plugin MCP servers: cannot get the signed-in user: error getting token source: You are not logged into Antigravity.
+E1116 18:00:49.538361     167 errorreport.go:307] Failed to poll ListExperiments: error getting token source: You are not logged into Antigravity.
+I1116 18:00:49.538396     167 server.go:4712] State refresh took 0ms
+I1116 18:00:49.538402     167 server.go:4727] [RemoteControl] Subscription callback triggered.
+I1116 18:00:49.538491     167 server.go:4730] [RemoteControl] RemoteControlEnabled value: false
+I1116 18:00:49.538503     167 server.go:5828] [RemoteControl] Session toggle is off, staying disconnected
+I1116 18:00:49.538512     167 server.go:5511] [RemoteControl] Resolved proxyServerURL: ""
+I1116 18:00:49.538590     167 profiler.go:231] Continuous pprof profiling is disabled.
+I1116 18:00:49.538613     209 manager.go:98] Migration [MIGRATION_ID_SANITY_CHECK_PROJECT_URIS] is enabled
+I1116 18:00:49.538658     209 manager.go:107] Migration [MIGRATION_ID_SANITY_CHECK_PROJECT_URIS] already has status MIGRATION_STATUS_COMPLETED, skipping
+I1116 18:00:49.538666     209 manager.go:98] Migration [MIGRATION_ID_PLUGIN_ENABLEMENT] is enabled
+I1116 18:00:49.538680     209 manager.go:107] Migration [MIGRATION_ID_PLUGIN_ENABLEMENT] already has status MIGRATION_STATUS_COMPLETED, skipping
+I1116 18:00:49.538682     209 manager.go:98] Migration [MIGRATION_ID_BUILTIN_SIDECARS_TO_PLUGINS] is enabled
+I1116 18:00:49.538693     209 manager.go:107] Migration [MIGRATION_ID_BUILTIN_SIDECARS_TO_PLUGINS] already has status MIGRATION_STATUS_COMPLETED, skipping
+I1116 18:00:49.538696     209 manager.go:95] Migration [MIGRATION_ID_LIN_BUILTIN_TO_MARKETPLACE] is disabled, skipping entirely
+I1116 18:00:49.538699     209 manager.go:95] Migration [MIGRATION_ID_ADOPT_BWG_INSTALLS] is disabled, skipping entirely
+I1116 18:00:49.538708     209 manager.go:95] Migration [MIGRATION_ID_GDRIVE_BUILTIN_PLUGIN] is disabled, skipping entirely
+I1116 18:00:49.538711     209 manager.go:95] Migration [MIGRATION_ID_SPLIT_SCIENCE_PLUGIN] is disabled, skipping entirely
+E1116 18:00:49.538785      85 errorreport.go:307] Failed to save trajectory for workspace file:///home/peam/open-projects/test/.staging/dsh-agy-acp: open /home/peam/.gemini/antigravity-cli/implicit/0b0bddcf-48a1-4868-a98b-fb2ac5c904d7.d4cc76dd-f954-438b-beb8-b2ae4413bb41.tmp: read-only file system
+E1116 18:00:49.538912      85 launcher.go:249] Failed to resolve GeminiDir ".gemini": .gemini must be an absolute path: path is not absolute, falling back to default
+I1116 18:00:49.538921      85 launcher.go:257] ACP app data directory: /home/peam/.gemini/antigravity-cli (cliDir="", mode=ccpa)
+I1116 18:00:49.538953      85 server.go:313] Creating CLI server backend: product=antigravity workspaceDirs=[] appDataDir=/home/peam/.gemini/antigravity-cli languageServer=true codeAssist=true
+I1116 18:00:49.539023      85 composite_token_storage.go:176] Using file-based token storage because no D-Bus session bus detected
+I1116 18:00:49.539054      85 auth_provider.go:813] [AuthProvider] SetEnableBusinessLogin called with enable: true
+E1116 18:00:49.539197      85 summary_store.go:280] summary store open failed (corrupt_on_open), recreating: summary_store: open write db: unable to open database file: no such file or directory
+E1116 18:00:49.539245      85 summary_store.go:285] summary store recreate failed: summary_store: open write db: unable to open database file: no such file or directory
+I1116 18:00:49.539276      85 server.go:2267] Backend project ID updated dynamically to: default-cli-project
+I1116 18:00:49.539326      85 composite_token_storage.go:176] Using file-based token storage because no D-Bus session bus detected
+I1116 18:00:49.539638     233 keyring.go:64] keyringAuth: loaded token, expiry=2026-11-16 18:17:09.44219815 +0800 CST expired=false
+I1116 18:00:49.539669      85 auth.go:157] ChainedAuth: authenticated via keyring (effective: keyring)
+I1116 18:00:49.539688      85 server_oauth.go:221] applyAuthResult: email=peamandchen@gmail.com, authMethod=consumer, quotaProject=
+I1116 18:00:49.539704      85 server_oauth.go:226] OAuth: authenticated successfully as peamandchen@gmail.com
+I1116 18:00:49.539706      85 server_oauth.go:235] b.codeAssistClient.AuthProvider (0x1411fcd6fa40) is same as b.cliAuth (0x1411fcd6fa40)
+W1116 18:00:49.539809     239 cache.go:189] Failed to refresh cache in background: admin controls not applicable
+W1116 18:00:49.539831     223 cache.go:189] Failed to refresh cache in background: admin controls not applicable
+I1116 18:00:49.714138     203 reconcile_summaries.go:94] [Summaries] reconcile checked 72 conversations, restored 6, cached 66, skipped 0, dropped 0, cancelled false in 175ms (resident: 0 -> 0)
+W1116 18:00:49.876186     150 mcp_manager.go:1458] Failed to write server states, eagerly loading all tools: failed to write tool click from server chrome to tmp file: open /home/peam/.gemini/antigravity-cli/mcp/chrome/click.json.tmp: read-only file system
+E1116 18:00:50.510277     105 errorreport.go:307] [Hub Summaries] failed to write summaries file in persist: open /home/peam/.gemini/antigravity-cli/jetbox_summaries_proto.pb.ad0c321a-1982-4305-87bf-35bf56755844.tmp: read-only file system
+I1116 18:00:50.558056     218 http_helpers.go:709] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:loadCodeAssist Trace: 0x4dde23a318d2970d
+I1116 18:00:51.187770     291 store_client.go:714] summary store: starting background reconciliation (trigger=startup)
+E1116 18:00:51.188061     291 summary_store.go:280] summary store open failed (corrupt_on_open), recreating: summary_store: open write db: unable to open database file: no such file or directory
+E1116 18:00:51.188119     291 summary_store.go:285] summary store recreate failed: summary_store: open write db: unable to open database file: no such file or directory
+E1116 18:00:51.188122     291 store_client.go:754] summary store: cannot reopen for reconciliation
+I1116 18:00:51.817237     235 http_helpers.go:709] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:fetchAvailableModels Trace: 0x84c057c4a41f52b0
+I1116 18:00:52.729293      85 http_helpers.go:108] UseAICodeMendel routing switch changed: false -> true
+I1116 18:00:52.729418      85 server.go:5348] [RemoteControl] Mendel flags changed (remote-control-setting-enabled=true, remote-control-proxy-server-url="jetski-webchannel.googleapis.com:443"), re-evaluating the connection
+I1116 18:00:52.729579      85 server.go:1199] Creating new cascade trajectory (agentScript=false)
+I1116 18:00:52.729601      85 server.go:1225] Conversation using project ID: default-cli-project
+I1116 18:00:52.729618     300 server.go:5828] [RemoteControl] Session toggle is off, staying disconnected
+I1116 18:00:52.729628     300 server.go:5511] [RemoteControl] Resolved proxyServerURL: ""
+E1116 18:00:52.730105      85 errorreport.go:307] failed to create persistent trajectory in store 1: open backend /home/peam/.gemini/antigravity-cli/conversations/98a6f757-80a6-4cf1-af59-f7bab784d83e.db: pre-create trajectory db file: open /home/peam/.gemini/antigravity-cli/conversations/98a6f757-80a6-4cf1-af59-f7bab784d83e.db: read-only file system
+E1116 18:00:52.730267      85 errorreport.go:307] Failed to ensure artifact directories for cascade 98a6f757-80a6-4cf1-af59-f7bab784d83e: mkdir /home/peam/.gemini/antigravity-cli/brain/98a6f757-80a6-4cf1-af59-f7bab784d83e: read-only file system
+E1116 18:00:52.730469      85 cascade_run_state.go:168] Failed to register with artifacts watcher for 98a6f757-80a6-4cf1-af59-f7bab784d83e: Failed to register with artifacts watcher for 98a6f757-80a6-4cf1-af59-f7bab784d83e: Failed to create artifacts directory for 98a6f757-80a6-4cf1-af59-f7bab784d83e: mkdir /home/peam/.gemini/antigravity-cli/brain/98a6f757-80a6-4cf1-af59-f7bab784d83e: read-only file system
+E1116 18:00:52.730515      85 errorreport.go:307] Failed to register with artifacts watcher for 98a6f757-80a6-4cf1-af59-f7bab784d83e: Failed to register with artifacts watcher for 98a6f757-80a6-4cf1-af59-f7bab784d83e: Failed to create artifacts directory for 98a6f757-80a6-4cf1-af59-f7bab784d83e: mkdir /home/peam/.gemini/antigravity-cli/brain/98a6f757-80a6-4cf1-af59-f7bab784d83e: read-only file system
+I1116 18:00:52.730635      85 server.go:1242] Created conversation 98a6f757-80a6-4cf1-af59-f7bab784d83e (backend=BACKEND_TYPE_UNSPECIFIED)
+I1116 18:00:52.730898      85 server.go:2901] Setting default model override: Gemini 3.8 Flash (High)
+I1116 18:00:52.731040      85 server.go:1288] Advertising available models to client: current=gemini-3.8-flash-high, count=6
+[smoke] session/new ok: 98a6f757-80a6-4cf1-af59-f7bab784d83e
+I1116 18:00:52.731901     338 server.go:988] ACP Request received: session/prompt
+I1116 18:00:52.731979     338 server.go:1260] Starting conversation update stream for 98a6f757-80a6-4cf1-af59-f7bab784d83e
+I1116 18:00:52.732029     338 server.go:1826] Sending user message to conversation 98a6f757-80a6-4cf1-af59-f7bab784d83e (items=1, media=0)
+I1116 18:00:52.733867     338 latency_breakdown.go:168] SEND_USER_CASCADE_MESSAGE_LATENCY latency breakdown: map[active_user_state_latency_ms:0 blocking:false cascade_id:98a6f757-80a6-4cf1-af59-f7bab784d83e cascade_send_latency_ms:1 hydrate_slash_commands_latency_ms:0 load_trajectory_latency_ms:0 media_count:0 media_summaries_latency_ms:0 message_origin:AGENT_MESSAGE_ORIGIN_UNSPECIFIED resolve_agent_config_latency_ms:0 save_media_latency_ms:0 saved_media_count:0 status:OK total_latency_ms:1 trajectory_id:edbad3f1-7a11-416d-b9c1-73aa617f00ab]
+I1116 18:00:52.735865      85 server.go:2427] Advertising 13 slash commands for session 98a6f757-80a6-4cf1-af59-f7bab784d83e
+I1116 18:00:52.741232     354 monitor_config_manager_external.go:53] externalMonitorConfigManager: initialized with embedded config (3 monitors)
+I1116 18:00:52.741300     354 monitoring.go:409] [Sonar] Resolved active tags: [jetski_mode_turbo policy_guardian sonar_skip_tags] (detected surface: "")
+I1116 18:00:52.741323     354 monitoring.go:409] [Sonar] Resolved active tags: [jetski_mode_turbo policy_guardian sonar_skip_tags] (detected surface: "")
+[update #1] available_commands_update
+[update #2] usage_update
+E1116 18:00:52.745492     354 errorreport.go:307] mkdir /home/peam/.gemini/antigravity-cli/brain/98a6f757-80a6-4cf1-af59-f7bab784d83e: read-only file system
+E1116 18:00:52.745498     143 stager.go:117] Failed to save message for 98a6f757-80a6-4cf1-af59-f7bab784d83e: open /home/peam/.gemini/antigravity-cli/conversations/98a6f757-80a6-4cf1-af59-f7bab784d83e.5e958e32-f24d-4567-8d0e-c1a72099b947.tmp: read-only file system
+E1116 18:00:52.745541     143 errorreport.go:307] open /home/peam/.gemini/antigravity-cli/conversations/98a6f757-80a6-4cf1-af59-f7bab784d83e.5e958e32-f24d-4567-8d0e-c1a72099b947.tmp: read-only file system
+[update #3] user_message_chunk
+W1116 18:00:52.864951     151 mcp_manager.go:1458] Failed to write server states, eagerly loading all tools: failed to write tool automation_navigate from server wechat-devtools to tmp file: open /home/peam/.gemini/antigravity-cli/mcp/wechat-devtools/automation_navigate.json.tmp: read-only file system
+E1116 18:00:53.509815     105 errorreport.go:307] [Hub Summaries] failed to write summaries file in persist: open /home/peam/.gemini/antigravity-cli/jetbox_summaries_proto.pb.ddf0e60d-4fee-47ea-a580-cb2b9bf1a8f8.tmp: read-only file system
+I1116 18:00:53.539603     371 http_helpers.go:709] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:streamGenerateContent?alt=sse Trace: 0x77f3cf201469f651 ResponseID: VdT6aqKBK92yxN8PyJDayQg
+E1116 18:00:53.674711     320 errorreport.go:307] writing generated conversation title for 98a6f757-80a6-4cf1-af59-f7bab784d83e: open /home/peam/.gemini/antigravity-cli/annotations/98a6f757-80a6-4cf1-af59-f7bab784d83e.pbtxt.bde885ad-3333-429f-ad65-38aba1b16366.tmp: read-only file system
+I1116 18:00:56.081429     663 http_helpers.go:709] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:streamGenerateContent?alt=sse Trace: 0xe5809155b62cd946 ResponseID: VtT6avf5KoTqkdUPtfeKwAk
+[update #4] chunk: "OK"
+E1116 18:00:57.512586     354 errorreport.go:307] mkdir /home/peam/.gemini/antigravity-cli/brain/98a6f757-80a6-4cf1-af59-f7bab784d83e: read-only file system
+E1116 18:00:57.512708     143 stager.go:117] Failed to save message for 98a6f757-80a6-4cf1-af59-f7bab784d83e: open /home/peam/.gemini/antigravity-cli/conversations/98a6f757-80a6-4cf1-af59-f7bab784d83e.5a18159c-4455-4dd4-b26b-f4723d918a87.tmp: read-only file system
+E1116 18:00:57.512744     143 errorreport.go:307] open /home/peam/.gemini/antigravity-cli/conversations/98a6f757-80a6-4cf1-af59-f7bab784d83e.5a18159c-4455-4dd4-b26b-f4723d918a87.tmp: read-only file system
+E1116 18:00:57.513392     143 stager.go:117] Failed to save message for 98a6f757-80a6-4cf1-af59-f7bab784d83e: open /home/peam/.gemini/antigravity-cli/conversations/98a6f757-80a6-4cf1-af59-f7bab784d83e.4b99892c-8390-4a6e-aa96-7c990f5b69b4.tmp: read-only file system
+E1116 18:00:57.513415     143 errorreport.go:307] open /home/peam/.gemini/antigravity-cli/conversations/98a6f757-80a6-4cf1-af59-f7bab784d83e.4b99892c-8390-4a6e-aa96-7c990f5b69b4.tmp: read-only file system
+E1116 18:00:57.513636     143 stager.go:117] Failed to save message for 98a6f757-80a6-4cf1-af59-f7bab784d83e: open /home/peam/.gemini/antigravity-cli/conversations/98a6f757-80a6-4cf1-af59-f7bab784d83e.e4909b0c-4cee-4061-9ddc-aea2612ea9b4.tmp: read-only file system
+E1116 18:00:57.513656     143 errorreport.go:307] open /home/peam/.gemini/antigravity-cli/conversations/98a6f757-80a6-4cf1-af59-f7bab784d83e.e4909b0c-4cee-4061-9ddc-aea2612ea9b4.tmp: read-only file system
+I1116 18:00:57.513875     271 server.go:1323] Stream goroutine exited for 98a6f757-80a6-4cf1-af59-f7bab784d83e, sending completion signal
+[update #5] usage_update
+[smoke] prompt done; stopReason = end_turn; received 5 session/update notifications
+[smoke] SUCCESS
+E1116 18:00:57.515755     105 errorreport.go:307] [Hub Summaries] failed to write summaries file in persist: open /home/peam/.gemini/antigravity-cli/jetbox_summaries_proto.pb.2579a71a-d4e3-40fb-aeb8-056a2da37274.tmp: read-only file system
+E1116 18:00:57.517312     694 telemetry.go:141] error recording trajectory segment analytics: Post "https://daily-cloudcode-pa.googleapis.com/v1internal:recordTrajectoryAnalytics": context canceled
+I1116 18:00:57.517382     593 server.go:4395] Language server shutting down
+I1116 18:00:57.517388     593 server.go:4422] Waiting for migrations to complete to prevent partial migration state...
+E1116 18:00:57.522811     154 file_watcher.go:194] skipping empty or temp file: 
+E1116 18:00:57.522846     154 file_watcher.go:194] skipping empty or temp file: 
+E1116 18:00:57.522848     154 file_watcher.go:194] skipping empty or temp file: 
+E1116 18:00:57.522850     154 file_watcher.go:194] skipping empty or temp file: 
+E1116 18:00:57.522851     154 file_watcher.go:194] skipping empty or temp file: 
+E1116 18:00:57.522852     154 file_watcher.go:194] skipping empty or temp file: 
+E1116 18:00:57.522853     154 file_watcher.go:194] skipping empty or temp file: 
+E1116 18:00:57.522854     154 file_watcher.go:194] skipping empty or temp file: 
+E1116 18:00:57.522855     154 file_watcher.go:194] skipping empty or temp file: 
+E1116 18:00:57.522856     154 file_watcher.go:194] skipping empty or temp file: 
+E1116 18:00:57.522857     154 file_watcher.go:194] skipping empty or temp file: 
+E1116 18:00:57.522858     154 file_watcher.go:194] skipping empty or temp file: 
+E1116 18:00:57.522858     154 file_watcher.go:194] skipping empty or temp file: 
+E1116 18:00:57.522859     154 file_watcher.go:194] skipping empty or temp file: 
+E1116 18:00:57.522860     154 file_watcher.go:194] skipping empty or temp file: 
+E1116 18:00:57.522861     154 file_watcher.go:194] skipping empty or temp file: 
+E1116 18:00:57.522862     154 file_watcher.go:194] skipping empty or temp file: 
+E1116 18:00:57.522863     154 file_watcher.go:194] skipping empty or temp file: 
+E1116 18:00:57.522865     154 file_watcher.go:194] skipping empty or temp file: 
+E1116 18:00:57.522866     154 file_watcher.go:194] skipping empty or temp file: 
+E1116 18:00:57.522867     154 file_watcher.go:194] skipping empty or temp file: 
+E1116 18:00:57.522868     154 file_watcher.go:194] skipping empty or temp file: 
+E1116 18:00:57.522870     154 file_watcher.go:194] skipping empty or temp file: 
+E1116 18:00:57.522870     154 file_watcher.go:194] skipping empty or temp file: 
+E1116 18:00:57.522871     154 file_watcher.go:194] skipping empty or temp file: 
+E1116 18:00:57.522872     154 file_watcher.go:194] skipping empty or temp file: 
+E1116 18:00:57.522873     154 file_watcher.go:194] skipping empty or temp file: 
+E1116 18:00:57.522874     154 file_watcher.go:194] skipping empty or temp file: 
+E1116 18:00:57.522875     154 file_watcher.go:194] skipping empty or temp file: 
+E1116 18:00:57.522875     154 file_watcher.go:194] skipping empty or temp file: 
+E1116 18:00:57.522876     154 file_watcher.go:194] skipping empty or temp file: 
+E1116 18:00:57.522879     154 file_watcher.go:194] skipping empty or temp file: 
