@@ -1,13 +1,30 @@
-# Bundle layer for dsh-agy-acp: registers the `agy` subagent provider
-# (out-of-process ACP with a live process mirror) and the model-facing
-# delegation tool that selects it.
+# Bundle layer for dsh-agy-acp: registers the `agy` tool that runs
+# Google Antigravity (agy acp) as an observable background job with
+# session-governed permissions and process isolation.
+#
+# permission: ask       — the child's permission requests (out-of-workspace
+#   writes, command execution) bridge into the parent session's approval
+#   waterfall; a closed parent turn fails closed.
+# isolation: agy-sandbox — agy runs with its own `--sandbox` (terminal
+#   restrictions); containment relies on agy's tightened permission rules
+#   (~/.gemini/antigravity-cli/settings.json: no toolPermission override) +
+#   this bridge. `bwrap` is available as a stronger-but-command-breaking
+#   option; `off` spawns unconfined.
 - insert:
     - id: agy-acp
       name: 'dsh-agy-acp'
-      config: {}
-    - id: tool-subagent-agy
-      name: '@deepseek-ai/dsh-tool-subagent'
       config:
-        provider: agy
-        toolName: agy
-        maxDepth: provider-managed
+        permission: ask
+        isolation: agy-sandbox
+
+# 让后台 job 的长等待不被"重复调用提醒"打断：对运行中 job 反复
+# job_output(wait: true) 是合法的阻塞等待（超时只是本次读取返回，job 继续跑），
+# 不是死循环。exclude 使该工具对重复链透明（既不计数也不重置其余工具的链）。
+# 注：patch 对 row 的 config 是整块替换，这里重述了 repeat-tool-reminder 的
+# 全部默认值，仅追加 exclude（默认值见 @deepseek-ai/dsh-repeat-tool-reminder）。
+- id: repeat-tool-reminder
+  config:
+    thresholds: [3, 5, 8]
+    include: []
+    exclude: ['job_output']
+    argumentsPreviewChars: 500
